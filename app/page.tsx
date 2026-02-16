@@ -6,6 +6,8 @@ import AboutSection from "@/components/AboutSection";
 import Footer from "@/components/Footer";
 import FAQSection from "@/components/FAQSection";
 import ProgramsSection from "@/components/ProgramsSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import MentorSection from "@/components/MentorSection";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       <WhyUsSection />
       <AboutSection />
       <ProgramsSection />
+      <TestimonialsSection />
+      <MentorSection />
       <FAQSection />
       <Footer />
     </main>
