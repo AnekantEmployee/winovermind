@@ -1,19 +1,21 @@
+import Image from "next/image";
+
 export default function WhyUsSection() {
   const features = [
     {
-      icon: "💙",
+      icon: "/images/Group 13.png",
       title: "Personalized Care",
       description:
         "Your privacy and comfort are our top priorities. We provide a judgment-free space where healing begins.",
     },
     {
-      icon: "🤝",
+      icon: "/images/Group 14.png",
       title: "Experienced Professionals",
       description:
         "Your privacy and comfort are our top priorities. We provide a judgment-free space where healing begins.",
     },
     {
-      icon: "👥",
+      icon: "/images/Group 16.png",
       title: "Holistic Approach",
       description:
         "Your privacy and comfort are our top priorities. We provide a judgment-free space where healing begins.",
@@ -27,7 +29,8 @@ export default function WhyUsSection() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-teal-50 to-blue-50 relative overflow-hidden">
+    <section className="py-20 bg-cover bg-center relative overflow-hidden" style={{ backgroundImage: "url('/images/19726c9c-7c52-4a43-9af5-9c3187998d61 2.png')" }}>
+      <div className="absolute inset-0 bg-white/30"></div>
       {/* Decorative leaf patterns */}
       <div className="absolute top-0 left-0 w-64 h-64 opacity-10">
         <svg viewBox="0 0 200 200" className="w-full h-full">
@@ -64,8 +67,8 @@ export default function WhyUsSection() {
           <div className="space-y-6">
             {features.map((feature, index) => (
               <div key={index} className="flex gap-4">
-                <div className="flex-shrink-0 w-16 h-16 bg-white rounded-full flex items-center justify-center text-3xl shadow-lg">
-                  {feature.icon}
+                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center">
+                  <Image src={feature.icon} alt={feature.title} width={64} height={64} />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -78,7 +81,7 @@ export default function WhyUsSection() {
           </div>
 
           {/* Right Column - Benefits Card */}
-          <div className="bg-gradient-to-br from-teal-600 to-teal-700 rounded-3xl p-8 text-white shadow-2xl">
+          <div className="bg-gradient-to-tr from-secondary to-primary rounded-3xl p-8 text-white shadow-2xl">
             <h3 className="text-3xl font-bold mb-4">
               Safe. Supportive.
               <br />

@@ -9,14 +9,12 @@ export default function HeroSection() {
     <section className="relative h-screen w-full overflow-hidden">
       {/* Background Image - Replace with your actual image */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center opacity-70"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1476611338391-6f395a0ebc7b?q=80&w=2070')",
+          backgroundImage: "url('/images/Mask group.png')",
         }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-teal-900/60 to-teal-700/40"></div>
-      </div>
+      ></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-teal-900/60 to-teal-700/40"></div>
 
       {/* Content */}
       <div className="relative z-10 h-full flex items-center">
@@ -30,7 +28,7 @@ export default function HeroSection() {
             <p className="text-xl text-white/90 mb-8">
               Find peace and healing through transformative wellness retreats
             </p>
-            <button className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-full text-lg font-medium transition">
+            <button className="bg-primary hover:opacity-80 text-white px-8 py-3 rounded-full text-lg font-medium transition cursor-pointer">
               Book Now
             </button>
           </div>
