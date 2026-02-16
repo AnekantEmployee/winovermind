@@ -4,15 +4,12 @@ export default function MentorSection() {
   const benefits = [
     {
       icon: (
-        <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none">
-          <path
-            d="M24 8L28 20L40 24L28 28L24 40L20 28L8 24L20 20L24 8Z"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+        <Image
+          src="/images/carbon_crop-growth.png"
+          alt="Professional Growth"
+          width={48}
+          height={48}
+        />
       ),
       title: "Professional Growth",
       description:
@@ -20,19 +17,12 @@ export default function MentorSection() {
     },
     {
       icon: (
-        <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none">
-          <path
-            d="M24 38C31.732 38 38 31.732 38 24C38 16.268 31.732 10 24 10C16.268 10 10 16.268 10 24C10 31.732 16.268 38 24 38Z"
-            stroke="currentColor"
-            strokeWidth="2"
-          />
-          <path
-            d="M24 18V24L28 28"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-        </svg>
+        <Image
+          src="/images/Vector.png"
+          alt="Reduced Burnout"
+          width={48}
+          height={48}
+        />
       ),
       title: "Reduced Burnout",
       description:
@@ -41,39 +31,23 @@ export default function MentorSection() {
   ];
 
   return (
-    <section className="relative py-20 overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-teal-600 via-teal-700 to-teal-800"></div>
-
-      {/* Decorative grid pattern */}
-      <div className="absolute right-0 top-0 w-1/2 h-full opacity-10">
-        <svg className="w-full h-full" viewBox="0 0 400 400">
-          <defs>
-            <pattern
-              id="grid"
-              width="40"
-              height="40"
-              patternUnits="userSpaceOnUse"
-            >
-              <path
-                d="M 40 0 L 0 0 0 40"
-                fill="none"
-                stroke="white"
-                strokeWidth="0.5"
-              />
-            </pattern>
-          </defs>
-          <rect width="400" height="400" fill="url(#grid)" />
-        </svg>
+    <section className="relative py-20 overflow-visible">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/Frame 155.png"
+          alt="Background"
+          fill
+          className="object-cover"
+        />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-end">
           {/* Image */}
-          <div className="relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              {/* Replace with actual image */}
-              <div className="aspect-[3/4] bg-gray-300 relative">
+          <div className="relative h-full">
+            <div className="rounded-lg overflow-hidden shadow-2xl w-full max-w-lg z-20 absolute -bottom-20 left-0">
+              <div className="aspect-[10/12] bg-gray-300 relative">
                 <Image
                   src="/images/Untitled-design.png.png"
                   alt="Professional Mentor"
@@ -85,7 +59,7 @@ export default function MentorSection() {
           </div>
 
           {/* Content */}
-          <div className="text-white">
+          <div className="text-white relative">
             <p className="text-teal-200 uppercase text-sm font-semibold mb-4">
               Mentor
             </p>

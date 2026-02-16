@@ -54,7 +54,7 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-100 via-teal-50 to-blue-50 relative overflow-hidden">
+    <section className="pt-20 pb-[20vh] bg-gradient-to-br from-gray-100 via-teal-50 to-blue-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="mb-12">

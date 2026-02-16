@@ -8,6 +8,8 @@ import FAQSection from "@/components/FAQSection";
 import ProgramsSection from "@/components/ProgramsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import MentorSection from "@/components/MentorSection";
+import ProgramCalendarSection from "@/components/ProgramCalender";
+import LatestArticlesSection from "@/components/LatestArticlesSection";
 
 export default function Home() {
   return (
@@ -20,7 +22,9 @@ export default function Home() {
       <ProgramsSection />
       <TestimonialsSection />
       <MentorSection />
+      <ProgramCalendarSection />
       <FAQSection />
+      <LatestArticlesSection />
       <Footer />
     </main>
   );
