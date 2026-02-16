@@ -1,9 +1,1 @@
 @import "tailwindcss";
-
-@theme {
-  --color-primary: #2B5261;
-}
-
-body {
-  margin: 0;
-}

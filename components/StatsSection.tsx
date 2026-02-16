@@ -7,7 +7,7 @@ export default function StatsSection() {
   ];
 
   return (
-    <section className="bg-gradient-primary py-6">
+    <section className="bg-gradient-to-r from-primary to-secondary py-6">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
