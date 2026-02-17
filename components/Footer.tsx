@@ -31,17 +31,17 @@ export default function Footer() {
     <footer className="bg-gradient-to-tr from-secondary to-primary text-white">
       <div className="max-w-7xl mx-auto px-6 py-12">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 pb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 pb-8">
           {/* Logo and Description */}
-          <div className="md:col-span-1">
+          <div className="sm:col-span-2 lg:col-span-1">
             <div className="mb-4">
               <div className="flex items-center gap-2">
-                <div className="w-[7vw] h-[4vw] relative">
+                <div className="relative w-40 h-20">
                   <Image
                     src="/images/white logo.png"
                     alt="WinterMind Logo"
                     fill
-                    className="object-contain"
+                    className="object-contain object-left"
                   />
                 </div>
               </div>
@@ -153,7 +153,7 @@ export default function Footer() {
         <div className="border-t border-teal-600 my-6"></div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
           {/* Social Links */}
           <div className="flex gap-3">
             {socialLinks.map((social, index) => (

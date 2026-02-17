@@ -54,7 +54,7 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section className="pt-20 pb-[20vh] bg-gradient-to-br from-gray-100 via-teal-50 to-blue-50 relative overflow-hidden">
+    <section className="pt-20 pb-[20vh] bg-gradient-to-br from-gray-100 via-teal-50 to-blue-50 relative overflow-hidden" style={{ backgroundImage: "url('/images/19726c9c-7c52-4a43-9af5-9c3187998d61 1.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="mb-12">

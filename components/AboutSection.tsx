@@ -3,14 +3,14 @@ import Image from "next/image";
 export default function AboutSection() {
   return (
     <section className="py-20 bg-white relative overflow-hidden">
-      <div className="absolute right-0 top-1/4 w-10 h-81 bg-primary/90 rounded-tl-[1rem] rounded-bl-[1rem]"></div>
+      <div className="hidden md:block absolute right-0 top-1/4 w-10 h-81 bg-primary/90 rounded-tl-[1rem] rounded-bl-[1rem]"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Image */}
-          <div className="relative w-9/12 mx-auto">
+          <div className="relative w-full md:w-9/12 mx-auto">
             {/* Back decorative frame */}
-            <div className="absolute top-10 left-10 w-full h-full bg-primary rounded-[0.5rem] z-0"></div>
+            <div className="absolute top-4 left-4 md:top-10 md:left-10 w-full h-full bg-primary rounded-[0.5rem] -z-10"></div>
 
             {/* Image container */}
             <div className="relative rounded-[0.5rem] overflow-hidden shadow-2xl z-10">

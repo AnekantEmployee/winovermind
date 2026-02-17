@@ -30,19 +30,6 @@ export default function WhyUsSection() {
 
   return (
     <section className="py-20 bg-cover bg-center relative overflow-hidden" style={{ backgroundImage: "url('/images/19726c9c-7c52-4a43-9af5-9c3187998d61 2.png')" }}>
-      <div className="absolute inset-0 bg-white/30"></div>
-      {/* Decorative leaf patterns */}
-      <div className="absolute top-0 left-0 w-64 h-64 opacity-10">
-        <svg viewBox="0 0 200 200" className="w-full h-full">
-          <path
-            d="M50,100 Q75,50 100,100 T150,100"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            className="text-teal-600"
-          />
-        </svg>
-      </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}

@@ -43,11 +43,11 @@ export default function MentorSection() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-end">
+        <div className="grid md:grid-cols-2 gap-[24vh] md:gap-12 items-end">
           {/* Image */}
           <div className="relative h-full">
-            <div className="rounded-lg overflow-hidden shadow-2xl w-full max-w-lg z-20 absolute -bottom-20 left-0">
-              <div className="aspect-[10/12] bg-gray-300 relative">
+            <div className="rounded-lg overflow-hidden shadow-2xl w-full max-w-lg z-20 absolute -bottom-[20vh] md:-bottom-20 left-0">
+              <div className="aspect-[11/12] md:aspect-[10/12] bg-gray-300 relative">
                 <Image
                   src="/images/Untitled-design.png.png"
                   alt="Professional Mentor"
