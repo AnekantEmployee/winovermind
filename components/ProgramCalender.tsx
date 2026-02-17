@@ -4,6 +4,11 @@ import { useState } from "react";
 
 export default function ProgramCalendarSection() {
   const [currentMonth, setCurrentMonth] = useState(new Date(2026, 1)); // February 2026
+  const [selectedEvent, setSelectedEvent] = useState<{
+    date: number;
+    type: string;
+    title: string;
+  } | null>(null);
 
   const getDaysInMonth = (date: Date) => {
     const year = date.getFullYear();
@@ -161,27 +166,37 @@ export default function ProgramCalendarSection() {
                 <div
                   key={day}
                   className="relative h-24 md:h-28 border border-gray-100 rounded-lg"
+                  onClick={() => event && setSelectedEvent(event)}
                 >
-                  <div className="absolute inset-2 flex flex-col justify-center gap-1">
-                    <div className="text-center text-xs md:text-sm font-medium text-gray-700">
+                  <div className="absolute inset-2 flex flex-col items-center justify-center">
+                    <div className="text-xs md:text-sm font-medium text-gray-700">
                       {day}
                     </div>
-                    {event && (
+                  </div>
+                  {event && (
+                    <>
+                      {/* Mobile: Show dot only - absolute positioned below date */}
                       <div
-                        className={`min-h-[2.5rem] md:min-h-[3rem] rounded-md md:rounded-lg flex items-center justify-center text-center text-[9px] leading-tight md:text-xs text-white font-medium px-1 py-1 ${
+                        className={`md:hidden absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-4 w-2 h-2 rounded-full ${
                           event.type === "residential"
                             ? "bg-teal-600"
                             : "bg-teal-400"
                         }`}
-                        style={{
-                          gridColumn:
-                            event.span > 1 ? `span ${event.span}` : "auto",
-                        }}
-                      >
-                        {event.title}
+                      />
+                      {/* Desktop: Show full event */}
+                      <div className="hidden md:block absolute inset-x-2 bottom-2">
+                        <div
+                          className={`min-h-[3rem] rounded-lg flex items-center justify-center text-center text-xs text-white font-medium px-1 py-1 ${
+                            event.type === "residential"
+                              ? "bg-teal-600"
+                              : "bg-teal-400"
+                          }`}
+                        >
+                          {event.title}
+                        </div>
                       </div>
-                    )}
-                  </div>
+                    </>
+                  )}
                 </div>
               );
             })}
@@ -209,6 +224,65 @@ export default function ProgramCalendarSection() {
           </button>
         </div>
       </div>
+
+      {/* Mobile Event Overlay */}
+      {selectedEvent && (
+        <div
+          className="md:hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedEvent(null)}
+        >
+          <div
+            className="bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-lg font-bold text-gray-900">
+                {selectedEvent.title}
+              </h3>
+              <button
+                onClick={() => setSelectedEvent(null)}
+                className="text-gray-400 hover:text-gray-600"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div className="flex items-center gap-2 mb-4">
+              <div
+                className={`w-3 h-3 rounded-full ${
+                  selectedEvent.type === "residential"
+                    ? "bg-teal-600"
+                    : "bg-teal-400"
+                }`}
+              />
+              <span className="text-sm text-gray-600 capitalize">
+                {selectedEvent.type}
+              </span>
+            </div>
+            <p className="text-gray-600 text-sm mb-6">
+              Date: {monthNames[currentMonth.getMonth()]} {selectedEvent.date},{" "}
+              {currentMonth.getFullYear()}
+            </p>
+            <button
+              onClick={() => setSelectedEvent(null)}
+              className="w-full bg-teal-600 text-white py-3 rounded-full font-semibold hover:bg-teal-700 transition"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

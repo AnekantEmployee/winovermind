@@ -28,7 +28,7 @@ export default function Header() {
         isScrolled ? "bg-white/10 backdrop-blur-md" : ""
       }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <div className="max-w-8xl px-5 mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
           <Image
@@ -44,20 +44,20 @@ export default function Header() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-white p-2 w-10 h-10 flex flex-col justify-center items-end gap-1.5"
+          className={`md:hidden p-2 w-10 h-10 flex flex-col justify-center items-end gap-1.5 transition-colors ${isScrolled ? "text-gray-900" : "text-white"}`}
         >
           <span
-            className={`h-0.5 bg-white transition-all duration-300 origin-right ${
+            className={`h-0.5 transition-all duration-300 origin-right ${isScrolled ? "bg-gray-900" : "bg-white"} ${
               isOpen ? "w-full rotate-[-40deg] translate-y-[1px]" : "w-full"
             }`}
           />
           <span
-            className={`h-0.5 bg-white transition-all duration-300 ${
+            className={`h-0.5 transition-all duration-300 ${isScrolled ? "bg-gray-900" : "bg-white"} ${
               isOpen ? "w-0 opacity-0" : "w-[80%]"
             }`}
           />
           <span
-            className={`h-0.5 bg-white transition-all duration-300 origin-right ${
+            className={`h-0.5 transition-all duration-300 origin-right ${isScrolled ? "bg-gray-900" : "bg-white"} ${
               isOpen ? "w-full rotate-[40deg] translate-y-[-1px]" : "w-[65%]"
             }`}
           />
@@ -69,7 +69,9 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className={`text-white hover:opacity-80 transition px-4 py-2 rounded-full ${
+              className={`hover:opacity-80 transition px-4 py-2 rounded-full ${
+                isScrolled ? "text-gray-900" : "text-white"
+              } ${
                 pathname === item.href ? "bg-secondary" : ""
               }`}
             >

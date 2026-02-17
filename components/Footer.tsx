@@ -31,7 +31,7 @@ export default function Footer() {
     <footer className="bg-gradient-to-tr from-secondary to-primary text-white">
       <div className="max-w-7xl mx-auto px-6 py-12">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 pb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Logo and Description */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="mb-4">
@@ -147,6 +147,26 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+        </div>
+
+        {/* Newsletter Section */}
+        <div className="flex justify-end">
+          <form className="max-w-sm w-full">
+            <div className="relative bg-white/20 backdrop-blur-sm rounded-full p-1.5">
+              <input
+                type="email"
+                placeholder="Your email"
+                required
+                className="w-full pr-28 pl-5 py-2 text-sm rounded-full bg-transparent text-white placeholder-white/70 focus:outline-none"
+              />
+              <button
+                type="submit"
+                className="absolute right-1.5 top-1.5 px-5 py-2 text-sm bg-[#53ACAA] hover:bg-teal-400 text-white font-semibold rounded-full transition whitespace-nowrap cursor-pointer"
+              >
+                Subscribe
+              </button>
+            </div>
+          </form>
         </div>
 
         {/* Divider */}
