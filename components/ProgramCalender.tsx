@@ -61,8 +61,15 @@ export default function ProgramCalendarSection() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 via-teal-50 to-blue-50 relative overflow-hidden">
-
+    <section
+      className="py-20 bg-gradient-to-br from-blue-50 via-teal-50 to-blue-50 relative overflow-hidden"
+      style={{
+        backgroundImage:
+          "url('/images/ChatGPT Image Feb 17, 2026, 10_50_45 AM 1.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
@@ -139,7 +146,10 @@ export default function ProgramCalendarSection() {
           <div className="grid grid-cols-7 gap-1 md:gap-2">
             {/* Empty cells for days before month starts */}
             {Array.from({ length: firstDay }).map((_, index) => (
-              <div key={`empty-${index}`} className="h-24 md:h-28 border border-gray-100 rounded-lg"></div>
+              <div
+                key={`empty-${index}`}
+                className="h-24 md:h-28 border border-gray-100 rounded-lg"
+              ></div>
             ))}
 
             {/* Days of the month */}
@@ -148,7 +158,10 @@ export default function ProgramCalendarSection() {
               const event = getEventForDate(day);
 
               return (
-                <div key={day} className="relative h-24 md:h-28 border border-gray-100 rounded-lg">
+                <div
+                  key={day}
+                  className="relative h-24 md:h-28 border border-gray-100 rounded-lg"
+                >
                   <div className="absolute inset-2 flex flex-col justify-center gap-1">
                     <div className="text-center text-xs md:text-sm font-medium text-gray-700">
                       {day}
@@ -178,7 +191,9 @@ export default function ProgramCalendarSection() {
           <div className="flex items-center justify-center gap-4 md:gap-6 mt-6 md:mt-8 pt-4 md:pt-6 border-t border-gray-200">
             <div className="flex items-center gap-1.5 md:gap-2">
               <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-teal-600"></div>
-              <span className="text-xs md:text-sm text-gray-600">Residential</span>
+              <span className="text-xs md:text-sm text-gray-600">
+                Residential
+              </span>
             </div>
             <div className="flex items-center gap-1.5 md:gap-2">
               <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-teal-400"></div>
@@ -189,7 +204,7 @@ export default function ProgramCalendarSection() {
 
         {/* View All Button */}
         <div className="text-center">
-          <button className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 md:px-10 md:py-4 rounded-full font-semibold text-base md:text-lg transition shadow-lg hover:shadow-xl">
+          <button className="bg-teal-600 cursor-pointer hover:bg-teal-700 text-white px-6 py-3 md:px-10 md:py-4 rounded-full font-semibold text-base md:text-lg transition shadow-lg hover:shadow-xl">
             View All Sessions
           </button>
         </div>

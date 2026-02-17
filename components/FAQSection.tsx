@@ -44,7 +44,7 @@ export default function FAQSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Left Column - Header and Image */}
-          <div className="sticky top-24">
+          <div className="">
             {/* Header */}
             <div className="mb-8">
               <div className="flex items-center gap-2 mb-3">
