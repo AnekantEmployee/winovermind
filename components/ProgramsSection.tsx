@@ -90,7 +90,7 @@ export default function ProgramsSection() {
               >
                 <div className="grid md:grid-cols-5 gap-6 p-3">
                   {/* Image */}
-                  <div className="md:col-span-2 relative h-full max-h-[250px]">
+                  <div className="md:col-span-2 relative h-48 md:h-full md:max-h-[250px]">
                     <div className="relative h-full rounded-2xl overflow-hidden">
                       <Image
                         src={program.image}

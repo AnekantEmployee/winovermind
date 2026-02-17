@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 px-6 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 px-3 transition-all duration-300 ${
         isScrolled ? "bg-white/10 backdrop-blur-md" : ""
       }`}
     >
@@ -44,30 +44,23 @@ export default function Header() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-white p-2"
+          className="md:hidden text-white p-2 w-10 h-10 flex flex-col justify-center items-end gap-1.5"
         >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            {isOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
+          <span
+            className={`h-0.5 bg-white transition-all duration-300 origin-right ${
+              isOpen ? "w-full rotate-[-40deg] translate-y-[1px]" : "w-full"
+            }`}
+          />
+          <span
+            className={`h-0.5 bg-white transition-all duration-300 ${
+              isOpen ? "w-0 opacity-0" : "w-[80%]"
+            }`}
+          />
+          <span
+            className={`h-0.5 bg-white transition-all duration-300 origin-right ${
+              isOpen ? "w-full rotate-[40deg] translate-y-[-1px]" : "w-[65%]"
+            }`}
+          />
         </button>
 
         {/* Navigation */}

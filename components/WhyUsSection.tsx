@@ -29,8 +29,13 @@ export default function WhyUsSection() {
   ];
 
   return (
-    <section className="py-20 bg-cover bg-center relative overflow-hidden" style={{ backgroundImage: "url('/images/19726c9c-7c52-4a43-9af5-9c3187998d61 2.png')" }}>
-
+    <section
+      className="py-20 bg-cover bg-center relative overflow-hidden"
+      style={{
+        backgroundImage:
+          "url('/images/19726c9c-7c52-4a43-9af5-9c3187998d61 2.png')",
+      }}
+    >
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
@@ -55,7 +60,12 @@ export default function WhyUsSection() {
             {features.map((feature, index) => (
               <div key={index} className="flex gap-4">
                 <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center">
-                  <Image src={feature.icon} alt={feature.title} width={64} height={64} />
+                  <Image
+                    src={feature.icon}
+                    alt={feature.title}
+                    width={64}
+                    height={64}
+                  />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -70,9 +80,7 @@ export default function WhyUsSection() {
           {/* Right Column - Benefits Card */}
           <div className="bg-gradient-to-tr from-secondary to-primary rounded-3xl p-8 text-white shadow-2xl">
             <h3 className="text-3xl font-bold mb-4">
-              Safe. Supportive.
-              <br />
-              Confidential.
+              Safe. Supportive. Confidential.
             </h3>
             <p className="text-teal-100 mb-6">
               Your privacy and comfort are our top priorities. We provide a
