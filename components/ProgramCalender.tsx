@@ -78,15 +78,15 @@ export default function ProgramCalendarSection() {
         </div>
 
         {/* Calendar */}
-        <div className="bg-white rounded-3xl shadow-xl p-8 mb-8">
+        <div className="bg-white rounded-3xl shadow-xl p-4 md:p-8 mb-8">
           {/* Calendar Header */}
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center justify-between mb-6 md:mb-8">
             <button
               onClick={previousMonth}
-              className="p-2 hover:bg-gray-100 rounded-full transition"
+              className="p-1.5 md:p-2 hover:bg-gray-100 rounded-full transition"
             >
               <svg
-                className="w-5 h-5 text-gray-600"
+                className="w-4 h-4 md:w-5 md:h-5 text-gray-600"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -99,15 +99,15 @@ export default function ProgramCalendarSection() {
                 />
               </svg>
             </button>
-            <h3 className="text-xl font-semibold text-gray-900">
+            <h3 className="text-base md:text-xl font-semibold text-gray-900">
               {monthNames[currentMonth.getMonth()]} {currentMonth.getFullYear()}
             </h3>
             <button
               onClick={nextMonth}
-              className="p-2 hover:bg-gray-100 rounded-full transition"
+              className="p-1.5 md:p-2 hover:bg-gray-100 rounded-full transition"
             >
               <svg
-                className="w-5 h-5 text-gray-600"
+                className="w-4 h-4 md:w-5 md:h-5 text-gray-600"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -123,22 +123,23 @@ export default function ProgramCalendarSection() {
           </div>
 
           {/* Day Names */}
-          <div className="grid grid-cols-7 gap-2 mb-4">
+          <div className="grid grid-cols-7 gap-1 md:gap-2 mb-2 md:mb-4">
             {dayNames.map((day) => (
               <div
                 key={day}
-                className="text-center text-sm font-medium text-gray-600 py-2"
+                className="text-center text-xs md:text-sm font-medium text-gray-600 py-1 md:py-2"
               >
-                {day}
+                <span className="sm:hidden">{day.slice(0, 1)}</span>
+                <span className="hidden sm:inline">{day}</span>
               </div>
             ))}
           </div>
 
           {/* Calendar Grid */}
-          <div className="grid grid-cols-7 gap-2">
+          <div className="grid grid-cols-7 gap-1 md:gap-2">
             {/* Empty cells for days before month starts */}
             {Array.from({ length: firstDay }).map((_, index) => (
-              <div key={`empty-${index}`} className="h-20"></div>
+              <div key={`empty-${index}`} className="h-24 md:h-28 border border-gray-100 rounded-lg"></div>
             ))}
 
             {/* Days of the month */}
@@ -147,14 +148,14 @@ export default function ProgramCalendarSection() {
               const event = getEventForDate(day);
 
               return (
-                <div key={day} className="relative h-20">
-                  <div className="absolute inset-0 flex flex-col">
-                    <div className="text-center text-sm font-medium text-gray-700 py-1">
+                <div key={day} className="relative h-24 md:h-28 border border-gray-100 rounded-lg">
+                  <div className="absolute inset-2 flex flex-col justify-center gap-1">
+                    <div className="text-center text-xs md:text-sm font-medium text-gray-700">
                       {day}
                     </div>
                     {event && (
                       <div
-                        className={`flex-1 rounded-lg flex items-center justify-center text-xs text-white font-medium px-1 ${
+                        className={`min-h-[2.5rem] md:min-h-[3rem] rounded-md md:rounded-lg flex items-center justify-center text-center text-[9px] leading-tight md:text-xs text-white font-medium px-1 py-1 ${
                           event.type === "residential"
                             ? "bg-teal-600"
                             : "bg-teal-400"
@@ -164,9 +165,7 @@ export default function ProgramCalendarSection() {
                             event.span > 1 ? `span ${event.span}` : "auto",
                         }}
                       >
-                        {event.span === 1
-                          ? event.title.split(" ")[0]
-                          : event.title}
+                        {event.title}
                       </div>
                     )}
                   </div>
@@ -176,21 +175,21 @@ export default function ProgramCalendarSection() {
           </div>
 
           {/* Legend */}
-          <div className="flex items-center justify-center gap-6 mt-8 pt-6 border-t border-gray-200">
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-teal-600"></div>
-              <span className="text-sm text-gray-600">Residential</span>
+          <div className="flex items-center justify-center gap-4 md:gap-6 mt-6 md:mt-8 pt-4 md:pt-6 border-t border-gray-200">
+            <div className="flex items-center gap-1.5 md:gap-2">
+              <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-teal-600"></div>
+              <span className="text-xs md:text-sm text-gray-600">Residential</span>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-teal-400"></div>
-              <span className="text-sm text-gray-600">Digital</span>
+            <div className="flex items-center gap-1.5 md:gap-2">
+              <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-teal-400"></div>
+              <span className="text-xs md:text-sm text-gray-600">Digital</span>
             </div>
           </div>
         </div>
 
         {/* View All Button */}
         <div className="text-center">
-          <button className="bg-teal-600 hover:bg-teal-700 text-white px-10 py-4 rounded-full font-semibold text-lg transition shadow-lg hover:shadow-xl">
+          <button className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 md:px-10 md:py-4 rounded-full font-semibold text-base md:text-lg transition shadow-lg hover:shadow-xl">
             View All Sessions
           </button>
         </div>
