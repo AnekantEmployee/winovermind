@@ -37,7 +37,7 @@ export default function LatestArticlesSection() {
   return (
     <section className="relative overflow-hidden">
       {/* Newsletter + Articles combined section with teal background */}
-      <div className="bg-primary relative">
+      <div className="bg-gradient-to-tr from-secondary to-primary from-[30%] relative">
         {/* Decorative circular pattern */}
         <div className="absolute right-0 top-0 w-1/2 h-full opacity-10">
           <svg className="w-full h-full" viewBox="0 0 600 600" fill="none">
@@ -71,18 +71,18 @@ export default function LatestArticlesSection() {
 
             {/* Newsletter Form */}
             <form className="max-w-2xl mx-auto">
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="relative bg-white/20 backdrop-blur-sm rounded-full p-1.5">
                 <input
                   type="email"
                   placeholder="Your email"
                   required
-                  className="flex-1 px-6 py-3.5 rounded-full bg-transparent border-2 border-white/40 text-white placeholder-white/60 focus:outline-none focus:border-white/70 transition"
+                  className="w-full pr-32 pl-6 py-3 rounded-full bg-transparent text-white placeholder-white/70 focus:outline-none"
                 />
                 <button
                   type="submit"
-                  className="px-8 py-3.5 bg-secondary hover:bg-teal-400 text-white font-semibold rounded-full transition whitespace-nowrap"
+                  className="absolute right-1.5 top-1.5 px-6 py-3 bg-[#53ACAA] hover:bg-teal-400 text-white font-semibold rounded-full transition whitespace-nowrap"
                 >
-                  Subscribe Us
+                  Subscribe
                 </button>
               </div>
             </form>
