@@ -168,7 +168,7 @@ export default function ProgramCalendarSection() {
                   className="relative h-24 md:h-28 border border-gray-100 rounded-lg"
                   onClick={() => event && setSelectedEvent(event)}
                 >
-                  <div className="absolute inset-2 flex flex-col items-center justify-center">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
                     <div className="text-xs md:text-sm font-medium text-gray-700">
                       {day}
                     </div>
@@ -184,9 +184,9 @@ export default function ProgramCalendarSection() {
                         }`}
                       />
                       {/* Desktop: Show full event */}
-                      <div className="hidden md:block absolute inset-x-2 bottom-2">
+                      <div className="hidden md:block absolute left-2 right-2 bottom-2">
                         <div
-                          className={`min-h-[3rem] rounded-lg flex items-center justify-center text-center text-xs text-white font-medium px-1 py-1 ${
+                          className={`min-h-[1.8rem] rounded-sm flex items-center justify-center text-center text-xs text-white font-medium px-1 ${
                             event.type === "residential"
                               ? "bg-teal-600"
                               : "bg-teal-400"

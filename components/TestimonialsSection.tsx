@@ -1,8 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import { useState, useEffect, useRef } from "react";
 
 export default function TestimonialsSection() {
+  const [activeSlide, setActiveSlide] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   const testimonials = [
     {
       name: "Debbie Hemet",
@@ -53,8 +57,34 @@ export default function TestimonialsSection() {
     },
   ];
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveSlide((prev) => {
+        const next = (prev + 1) % testimonials.length;
+        if (scrollRef.current) {
+          const cardWidth = 300;
+          const gap = 24;
+          scrollRef.current.scrollTo({
+            left: next * (cardWidth + gap),
+            behavior: "smooth",
+          });
+        }
+        return next;
+      });
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="pt-20 pb-[20vh] bg-gradient-to-br from-gray-100 via-teal-50 to-blue-50 relative overflow-hidden" style={{ backgroundImage: "url('/images/19726c9c-7c52-4a43-9af5-9c3187998d61 1.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <section
+      className="pt-20 pb-[20vh] bg-gradient-to-br from-gray-100 via-teal-50 to-blue-50 relative overflow-hidden"
+      style={{
+        backgroundImage:
+          "url('/images/19726c9c-7c52-4a43-9af5-9c3187998d61 1.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="mb-12">
@@ -62,8 +92,8 @@ export default function TestimonialsSection() {
             Real Transformations
           </p>
           <h2 className="text-4xl md:text-5xl font-semibold mb-4">
-            Real <span className="text-teal-600 font-semibold">Stories</span>, Real{" "}
-            <span className="text-teal-600">People</span>
+            Real <span className="text-teal-600 font-semibold">Stories</span>,
+            Real <span className="text-teal-600">People</span>
           </h2>
           <p className="text-gray-700 text-base max-w-2xl">
             See how our participants have achieved lasting results through
@@ -72,8 +102,11 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Testimonials Grid - Horizontal Scroll */}
-        <div className="flex gap-6 overflow-x-auto pb-6 scrollbar-hide">
-          {testimonials.map((testimonial, index) => (
+        <div
+          ref={scrollRef}
+          className="flex gap-6 overflow-x-auto pb-6 scrollbar-hide scroll-smooth"
+        >
+          {[...testimonials, ...testimonials].map((testimonial, index) => (
             <div
               key={index}
               className="flex-shrink-0 w-[300px] h-[320px] bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition flex flex-col"
@@ -161,6 +194,29 @@ export default function TestimonialsSection() {
                 </div>
               </div>
             </div>
+          ))}
+        </div>
+
+        {/* Carousel Indicators */}
+        <div className="flex justify-center gap-2 mt-6">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                setActiveSlide(index);
+                if (scrollRef.current) {
+                  const cardWidth = 300;
+                  const gap = 24;
+                  scrollRef.current.scrollTo({
+                    left: index * (cardWidth + gap),
+                    behavior: "smooth",
+                  });
+                }
+              }}
+              className={`w-2 h-2 rounded-full transition ${
+                activeSlide === index ? "bg-teal-600" : "bg-gray-300"
+              }`}
+            />
           ))}
         </div>
       </div>

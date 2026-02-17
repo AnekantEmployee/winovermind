@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 export default function LatestArticlesSection() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   const articles = [
     {
@@ -33,6 +34,27 @@ export default function LatestArticlesSection() {
         "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800",
     },
   ];
+
+  const allArticles = [...articles, ...articles];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveSlide((prev) => {
+        const next = (prev + 1) % allArticles.length;
+        if (scrollRef.current) {
+          const container = scrollRef.current;
+          const cardWidth = container.querySelector("div")?.offsetWidth || 0;
+          const gap = 24;
+          container.scrollTo({
+            left: next * (cardWidth + gap),
+            behavior: "smooth",
+          });
+        }
+        return next;
+      });
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="relative overflow-hidden">
@@ -105,11 +127,14 @@ export default function LatestArticlesSection() {
       {/* Articles Grid - White Background */}
       <div className="bg-white py-12">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {articles.map((article, index) => (
+          <div
+            ref={scrollRef}
+            className="flex gap-6 pb-10 overflow-x-auto scrollbar-hide scroll-smooth"
+          >
+            {allArticles.map((article, index) => (
               <div
-                key={index}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition group"
+                key={`article-${index}`}
+                className="flex-shrink-0 w-[85vw] md:w-[calc(33.333%-16px)] bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition group"
               >
                 {/* Image */}
                 <div className="relative h-56 overflow-hidden cursor-pointer">
@@ -157,19 +182,6 @@ export default function LatestArticlesSection() {
             ))}
           </div>
 
-          {/* Carousel Indicators */}
-          <div className="flex justify-center gap-2 mb-6">
-            {[0, 1, 2].map((index) => (
-              <button
-                key={index}
-                onClick={() => setActiveSlide(index)}
-                className={`w-2 h-2 rounded-full transition ${
-                  activeSlide === index ? "bg-primary w-8" : "bg-gray-300"
-                }`}
-              />
-            ))}
-          </div>
-
           {/* View All Posts Button */}
           <div className="text-center">
             <button className="bg-primary hover:bg-teal-700 text-white px-10 py-3.5 rounded-full font-semibold transition flex items-center gap-2 mx-auto shadow-lg hover:shadow-xl">
@@ -191,6 +203,16 @@ export default function LatestArticlesSection() {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </section>
   );
 }
