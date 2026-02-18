@@ -12,7 +12,7 @@ export default function Header() {
   const navItems = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/services", label: "Services" },
+    { href: "/services/reclaim", label: "Services" },
     { href: "/page", label: "Page" },
   ];
 
@@ -71,9 +71,7 @@ export default function Header() {
               href={item.href}
               className={`hover:opacity-80 transition px-4 py-2 rounded-full ${
                 isScrolled ? "text-gray-900" : "text-white"
-              } ${
-                pathname === item.href ? "bg-secondary" : ""
-              }`}
+              } ${pathname === item.href ? "bg-secondary" : ""}`}
             >
               {item.label}
             </Link>
