@@ -1,8 +1,8 @@
+import Image from "next/image";
 import HeroSection from "@/components/Services/Reclaim/HeroSection";
-import ExperienceSection from "@/components/Services/Reclaim/ExperienceSection";
+import ProgramDetails from "@/components/Services/Reclaim/ProgramDetails";
 import WhoIsItForSection from "@/components/Services/Reclaim/WhoIsItForSection";
 import WhyReclaimSection from "@/components/Services/Reclaim/WhyReclaimSection";
-import Image from "next/image";
 
 export default function ReclaimService() {
   return (
@@ -19,7 +19,7 @@ export default function ReclaimService() {
         />
       </div>
       <WhoIsItForSection />
-      <ExperienceSection />
+      <ProgramDetails />
     </>
   );
 }
