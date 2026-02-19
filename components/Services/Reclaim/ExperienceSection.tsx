@@ -74,7 +74,11 @@ const ExperienceSection = () => {
                   className="w-12 h-12 rounded-xl flex items-center justify-center"
                   style={{ backgroundColor: "hsl(var(--muted))" }}
                 >
-                  <Icon size={22} className="text-secondary" strokeWidth={1.5} />
+                  <Icon
+                    size={22}
+                    className="text-secondary"
+                    strokeWidth={1.5}
+                  />
                 </div>
                 <h3 className="text-lg font-semibold leading-snug text-primary">
                   {item.title}
