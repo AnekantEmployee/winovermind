@@ -39,7 +39,7 @@ const WhoThisIsFor = () => {
 
   return (
     <section
-      className="relative overflow-hidden bg-[#f3ebe8] pt-[8vw] px-6"
+      className="relative overflow-hidden bg-[#f3ebe8] pt-16 sm:pt-20 md:pt-[8vw] px-4 sm:px-6"
       style={{
         backgroundImage:
           "url('/images/services/19726c9c-7c52-4a43-9af5-9c3187998d61 3.png')",
@@ -48,17 +48,17 @@ const WhoThisIsFor = () => {
       }}
     >
       {/* Heading */}
-      <div className="flex lg:w-[20vw] absolute top-10 left-[6vw]">
-        <div className="w-1.5 h-25 rounded-full bg-[#D4C1B3] mr-4" />
-        <h2 className="text-5xl font-black leading-[1.05] tracking-tight text-secondary">
+      <div className="flex w-full sm:w-auto lg:w-[20vw] relative sm:absolute top-0 sm:top-10 left-0 sm:left-[6vw] mb-8 sm:mb-0">
+        <div className="w-1.5 h-9 sm:h-20 md:h-25 rounded-full bg-[#D4C1B3] mr-3 sm:mr-4" />
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight sm:leading-[1.05] tracking-tight text-secondary">
           WHO THIS IS FOR?
         </h2>
       </div>
 
       <div className="relative z-10 mx-auto max-w-5xl flex flex-col lg:flex-row items-center justify-center">
         {/* Image + badge */}
-        <div className="relative flex-none">
-          <div className="w-[20vw] overflow-hidden shadow-2xl shadow-[#2d8a7a]/25 bg-[#9ed8d1]">
+        <div className="relative flex-none w-full sm:w-auto">
+          <div className="w-full sm:w-[40vw] md:w-[30vw] lg:w-[20vw] mx-auto overflow-hidden shadow-2xl shadow-[#2d8a7a]/25 bg-[#9ed8d1]">
             <Image
               src="/images/services/unsplash_YcNi_INd5is.png"
               alt="Who this journey is for"
@@ -69,27 +69,27 @@ const WhoThisIsFor = () => {
           </div>
 
           {/* Floating badge */}
-          <div className="absolute top-[8vh] -right-2 lg:-right-[11.5vw] flex items-center gap-2 bg-white shadow-md shadow-gray-500/50 rounded-sm px-4 py-2 shadow-lg">
-            <span className="text-sm text-text whitespace-nowrap">
+          <div className="absolute top-4 sm:top-[8vh] -right-2 sm:-right-4 lg:-right-[11.5vw] flex items-center gap-2 bg-white shadow-md shadow-gray-500/50 rounded-sm px-3 sm:px-4 py-2 shadow-lg">
+            <span className="text-xs sm:text-sm text-text whitespace-nowrap">
               This Journey Is For You If:
             </span>
           </div>
 
           {/* Checklist */}
-          <div className="flex-1 min-w-0 absolute top-[20vh] -right-2 lg:-right-[21vw]">
-            <div className="rounded-xl bg-bg px-8 py-5">
+          <div className="flex-1 min-w-0 absolute top-16 sm:top-[20vh] -right-2 sm:-right-4 lg:-right-[21vw] max-w-[calc(100vw-3rem)] sm:max-w-none">
+            <div className="rounded-xl bg-bg px-4 sm:px-6 md:px-8 py-4 sm:py-5">
               <ul className="space-y-1">
                 {checkItems.map((item, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-3 text-white text-[15px] leading-relaxed transition-all duration-500"
+                    className="flex items-start gap-2 sm:gap-3 text-white text-xs sm:text-sm md:text-[15px] leading-relaxed transition-all duration-500"
                     style={{
                       opacity: visible ? 1 : 0,
                       transform: visible ? "translateX(0)" : "translateX(20px)",
                       transitionDelay: `${i * 100 + 200}ms`,
                     }}
                   >
-                    <span className="font-bold mt-0.5 flex-shrink-0 text-base">
+                    <span className="font-bold mt-0.5 flex-shrink-0 text-sm sm:text-base">
                       ✓
                     </span>
                     {item}
@@ -116,7 +116,7 @@ const IncludedInReborn = () => {
 
   return (
     <section
-      className="bg-[#91cac8] py-20 px-6 text-center"
+      className="bg-[#91cac8] py-12 sm:py-16 md:py-20 px-4 sm:px-6 text-center"
       style={{
         backgroundImage:
           "url('/images/services/ChatGPT Image Feb 17, 2026, 10_50_45 AM 2.png')",
@@ -125,19 +125,19 @@ const IncludedInReborn = () => {
       }}
     >
       {/* Section title */}
-      <h2 className="text-4xl font-extrabold text-white mb-14 tracking-tight drop-shadow-sm">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-8 sm:mb-10 md:mb-14 tracking-tight drop-shadow-sm">
         Included in{" "}
-        <span className="inline-block bg-bg text-white rounded-md px-3 py-1">
+        <span className="inline-block bg-bg text-white rounded-md px-2 sm:px-3 py-1">
           Reborn
         </span>
       </h2>
 
       {/* Cards */}
-      <div className="mx-auto max-w-7xl flex flex-wrap justify-center gap-7">
+      <div className="mx-auto max-w-7xl flex flex-wrap justify-center gap-4 sm:gap-5 md:gap-7">
         {included.map((item, i) => (
           <div
             key={i}
-            className="group rounded-2xl bg-white/20 backdrop-blur-sm border-2 border-white/60 p-6 shadow-lg transition-all duration-300 cursor-pointer border border-white"
+            className="group rounded-xl sm:rounded-2xl bg-white/20 backdrop-blur-sm border-2 border-white/60 p-4 sm:p-5 md:p-6 shadow-lg transition-all duration-300 cursor-pointer border border-white w-full sm:w-auto"
             style={{
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0)" : "translateY(30px)",
@@ -145,7 +145,7 @@ const IncludedInReborn = () => {
             }}
           >
             {/* Thumbnail */}
-            <div className="bg-white w-[20vw] p-4 mx-auto mb-5 rounded-lg overflow-hidden shadow-md group-hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-white w-full sm:w-[40vw] md:w-[30vw] lg:w-[20vw] max-w-xs p-3 sm:p-4 mx-auto mb-4 sm:mb-5 rounded-lg overflow-hidden shadow-md group-hover:shadow-lg transition-shadow duration-300">
               <Image
                 src={item.img}
                 alt={item.alt}
@@ -156,7 +156,7 @@ const IncludedInReborn = () => {
             </div>
 
             {/* Label */}
-            <p className="font-semibold leading-snug text-[#2d6b63] whitespace-pre-line">
+            <p className="font-semibold text-sm sm:text-base leading-snug text-[#2d6b63] whitespace-pre-line">
               {item.label}
             </p>
           </div>
