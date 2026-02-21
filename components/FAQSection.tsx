@@ -10,32 +10,32 @@ export default function FAQSection() {
     {
       question: "Who is this program for?",
       answer:
-        "This program is ideal for anyone seeking to prevent disease, overcome health challenges like blood pressure, diabetes, arthritis, acidity, insomnia, thyroid, etc.) or adopt a healthier lifestyle. It is suitable for self-caring individuals who want to take control of their well-being.",
+        "Our programs are designed for individuals navigating stress, anxiety, grief, burnout, life transitions, or emotional overwhelm. Whether you're seeking clarity, healing, or personal growth, this space is for anyone ready to invest in their mental and emotional well-being.",
     },
     {
       question: "What can I expect during the program?",
       answer:
-        "During the program, you can expect personalized guidance, structured wellness activities, nutritional counseling, and ongoing support to help you achieve your health goals.",
+        "You can expect structured sessions, reflective exercises, practical coping tools, and guided conversations in a safe, confidential environment. Each program is personalized to your goals and paced according to your comfort and readiness.",
     },
     {
       question: "How do I prepare for the program?",
       answer:
-        "To prepare for the program, come with an open mind, bring comfortable clothing for activities, and be ready to commit to making positive changes in your lifestyle.",
+        "No special preparation is required. We simply encourage you to come with openness and honesty. During your first session, we assess your needs, clarify your goals, and design a supportive roadmap together.",
     },
     {
       question: "Is this a treatment program?",
       answer:
-        "This is a wellness program focused on prevention and lifestyle management. While it supports overall health, it is not a substitute for medical treatment. Always consult your healthcare provider.",
+        "We provide professional mental health consulting and therapeutic guidance. While we do not replace medical treatment where required, our services complement emotional wellness and personal development through evidence-based practices.",
     },
     {
-      question: "How much does Know Your Health (KYH) cost?",
+      question: "How much does the program cost?",
       answer:
-        "The cost varies depending on the specific program and duration you choose. Please contact our team for detailed pricing information and available packages.",
+        "Pricing depends on the type of program or consultation you choose. We offer flexible options to suit different needs. Please contact our team for detailed pricing information.",
     },
     {
       question: "Is my data private?",
       answer:
-        "Yes, we take your privacy seriously. All your personal and health data is kept confidential and secure, following industry-standard privacy practices.",
+        "Absolutely. Confidentiality is a core principle of our practice. All sessions, records, and personal information are handled with the highest level of privacy and ethical responsibility.",
     },
   ];
 
@@ -71,8 +71,8 @@ export default function FAQSection() {
                 Questions
               </h2>
               <p className="text-gray-600">
-                Everything you need to know about our wellness programs and how
-                they work.
+                Everything you need to know about our consulting programs,
+                therapy approach, and how we support your emotional well-being.
               </p>
             </div>
 
@@ -81,7 +81,7 @@ export default function FAQSection() {
               <div className="aspect-[4/3] relative">
                 <Image
                   src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=800"
-                  alt="Wellness Journey"
+                  alt="Therapy and Emotional Support"
                   fill
                   className="object-cover"
                 />
@@ -92,7 +92,7 @@ export default function FAQSection() {
                   <p className="text-lg font-medium mb-1">
                     We're here to guide you at every step of
                     <br />
-                    your wellness journey.
+                    your healing journey.
                   </p>
                   <p className="text-sm text-white/90">Get Started Today</p>
                 </div>

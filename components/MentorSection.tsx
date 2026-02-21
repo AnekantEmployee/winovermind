@@ -13,7 +13,7 @@ export default function MentorSection() {
       ),
       title: "Professional Growth",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Convallis est orci adipiscing tempus nulla",
+        "True growth begins with self-awareness. Through structured sessions and reflective practices, we help you understand your patterns, strengthen emotional intelligence, and make intentional life decisions. You don't just cope — you evolve.",
     },
     {
       icon: (
@@ -26,7 +26,7 @@ export default function MentorSection() {
       ),
       title: "Reduced Burnout",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Convallis est orci adipiscing tempus nulla",
+        "Emotional exhaustion and overwhelm can cloud your clarity. Our consulting approach provides practical tools to regulate stress, restore balance, and build sustainable resilience. Find steadiness. Regain energy. Reclaim focus.",
     },
   ];
 
@@ -63,11 +63,16 @@ export default function MentorSection() {
             <p className="text-teal-200 uppercase text-sm font-semibold mb-4">
               Mentor
             </p>
-            <h2 className="text-4xl md:text-5xl font-bold mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold">
               Introducing Experienced
               <br />
               Consulting
             </h2>
+            <p className="text-teal-200 text-sm mt-2 mb-12">
+              Guidance rooted in experience, compassion, and clinical
+              understanding — designed to help you grow with clarity and
+              confidence.
+            </p>
 
             <div className="space-y-8">
               {benefits.map((benefit, index) => (

@@ -82,13 +82,11 @@ export default function LatestArticlesSection() {
           {/* Newsletter Section */}
           <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Join To Our Newsletter
+              Join Our Wellness Community
             </h2>
             <p className="text-white/90 text-sm md:text-base max-w-3xl mx-auto leading-relaxed mb-8">
-              Lorem ipsum dolor sit amet consectetur. Convallis est urna
-              adipiscing fringilla nulla elem lorem non mauris. Ultrices aliquet
-              et quam adipiscing feugiat interdum mattis. Placerat donec risus
-              elem sed et. In ullamcorper ipsum.
+              Receive practical insights, mindful living tips, and emotional wellness guidance directly in your inbox.
+              Stay informed about new programs, workshops, and resources designed to support your growth journey.
             </p>
 
             {/* Newsletter Form */}
@@ -96,7 +94,7 @@ export default function LatestArticlesSection() {
               <div className="relative bg-white/20 backdrop-blur-sm rounded-full p-1.5">
                 <input
                   type="email"
-                  placeholder="Your email"
+                  placeholder="Your email address"
                   required
                   className="w-full pr-32 pl-6 py-3 rounded-full bg-transparent text-white placeholder-white/70 focus:outline-none"
                 />
@@ -104,7 +102,7 @@ export default function LatestArticlesSection() {
                   type="submit"
                   className="absolute right-1.5 top-1.5 px-6 py-3 bg-[#53ACAA] hover:bg-teal-400 text-white font-semibold rounded-full transition whitespace-nowrap"
                 >
-                  Subscribe
+                  Subscribe Now
                 </button>
               </div>
             </form>
@@ -116,9 +114,9 @@ export default function LatestArticlesSection() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
               Latest Articles
             </h2>
-            <p className="text-white/70 text-base">
-              Discover our latest tips and insights to help you on your wellness
-              journey.
+            <p className="text-white/70 text-base max-w-3xl mx-auto leading-relaxed">
+              Discover thoughtful insights, expert perspectives, and practical tools to support your emotional well-being and personal growth.
+              From managing stress to building resilience, explore articles designed to help you move forward with clarity and confidence.
             </p>
           </div>
         </div>

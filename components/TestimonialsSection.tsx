@@ -9,51 +9,51 @@ export default function TestimonialsSection() {
 
   const testimonials = [
     {
-      name: "Debbie Hemet",
+      name: "Aditi M.",
       rating: 5,
       image:
         "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150",
       quote:
-        '"Before I lifetime, I struggled with high blood pressure, a high resting pulse, and weight gain. Today I have more energy, stay active, and I\'m completely off blood pressure medication."',
+        '"Before starting therapy, I constantly felt overwhelmed and emotionally exhausted. I didn\'t understand my triggers or patterns. Today, I feel grounded, self-aware, and more in control of my emotions than ever before."',
       verified: true,
-      program: "Transform Your Health",
-      outcome: "Off BP medication",
-      duration: "16 days",
+      program: "Reborn – Emotional Healing",
+      outcome: "Emotional Regulation & Confidence",
+      duration: "12 Weeks",
     },
     {
-      name: "Reena S.",
+      name: "Rohan K.",
       rating: 5,
       image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150",
+        "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?semt=ais_hybrid&w=740&q=80",
       quote:
-        '"By day 10, I felt emotionally lighter, physically stronger, and mentally clearer. I still carry the rituals with me."',
+        '"I was navigating burnout and self-doubt. Through guided sessions and reflective exercises, I gained clarity about my goals and rebuilt my confidence. The tools I learned continue to support me daily."',
       verified: false,
-      program: "Transform Your Health",
-      outcome: "Mental clarity",
-      duration: "14 days",
+      program: "Life Transformation Program",
+      outcome: "Renewed Direction & Mental Clarity",
+      duration: "10 Weeks",
     },
     {
-      name: "Reena S.",
+      name: "Neha S. - Delhi",
       rating: 5,
       image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150",
       quote:
-        '"By day 10, I felt emotionally lighter, physically stronger, and mentally clearer. I still carry the rituals with me."',
+        '"By week 6, I felt emotionally lighter and mentally stronger. I learned how to process my feelings instead of suppressing them. It changed how I approach relationships and life decisions."',
       verified: false,
-      program: "Transform Your Health",
-      outcome: "Mental clarity",
-      duration: "14 days",
+      program: "Private Counseling",
+      outcome: "Emotional Strength & Self-Awareness",
+      duration: "8 Weeks",
     },
     {
-      name: "Reena S.",
+      name: "Anonymous Participant",
       rating: 5,
       image:
         "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150",
       quote:
-        '"By day 10, I felt emotionally lighter, physically stronger, and mentally clearer. I still carry the rituals with me."',
+        '"What stood out was the safe, non-judgmental environment. I never felt rushed. Healing finally felt possible, practical, and sustainable."',
       verified: false,
-      program: "Transform Your Health",
-      outcome: "Mental clarity",
-      duration: "14 days",
+      program: "Mindfulness Circles",
+      outcome: "Reduced Anxiety & Inner Stability",
+      duration: "Ongoing",
     },
   ];
 
@@ -96,8 +96,8 @@ export default function TestimonialsSection() {
             Real <span className="text-teal-600">People</span>
           </h2>
           <p className="text-gray-700 text-base max-w-2xl">
-            See how our participants have achieved lasting results through
-            Lifelite programs.
+            See how individuals have rediscovered clarity, resilience, and
+            emotional strength through our guided wellness programs.
           </p>
         </div>
 
@@ -109,7 +109,7 @@ export default function TestimonialsSection() {
           {[...testimonials, ...testimonials].map((testimonial, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-[300px] h-[320px] bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition flex flex-col"
+              className="flex-shrink-0 w-[300px] h-[350px] bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition flex flex-col"
             >
               {/* Header - Fixed Height */}
               <div className="flex items-start justify-between mb-4 h-10">
@@ -167,7 +167,7 @@ export default function TestimonialsSection() {
               </div>
 
               {/* Program Details - Fixed Height */}
-              <div className="grid grid-cols-3 gap-4 pt-4 border-t border-gray-100 h-16">
+              <div className="grid grid-cols-3 gap-4 pt-2 border-t border-gray-100 h-20">
                 <div>
                   <p className="text-[10px] text-teal-600 font-semibold mb-1 uppercase">
                     Program

@@ -38,21 +38,24 @@ export default function AboutSection() {
                 From Darkness to Purpose: A Journey of Healing and Helping
               </p>
               <p>
-                There was a time when I felt lost, disconnected from myself and
-                the world around me. Through that journey—moving from struggle
-                to detachment and, eventually, to clarity—I found the tools to
-                not only heal but to help others do the same.
+                There was a time when I felt disconnected — searching for
+                clarity, direction, and meaning. Through my own journey of
+                reflection and healing, I discovered tools that transformed my
+                life.
               </p>
               <p>
-                Now, I work with individuals navigating grief, trauma, and major
-                life transitions, guiding them toward emotional resilience and
-                empowerment. My approach is deeply rooted in evidence-based
-                therapy, mindfulness, and a commitment to creating sustainable
-                change.
+                Today, I support individuals navigating grief, trauma, burnout,
+                and major life transitions. My work is rooted in evidence-based
+                therapy, mindfulness practices, and a deep commitment to
+                sustainable emotional growth.
               </p>
               <p>
-                If you're ready to step into healing and reclaim your life, I'm
-                here to walk that path with you.
+                Healing is not about perfection — it is about awareness,
+                resilience, and reclaiming your strength.
+              </p>
+              <p>
+                If you're ready to begin that journey, I'm here to walk
+                alongside you.
               </p>
             </div>
 
