@@ -1,13 +1,35 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function HeroSection() {
   const [activeSlide, setActiveSlide] = useState(0);
   const slides = [
-    "/images/Mask group.png",
-    "/images/19726c9c-7c52-4a43-9af5-9c3187998d61 1.png",
-    "/images/ChatGPT Image Feb 17, 2026, 10_50_45 AM 1.png",
+    {
+      image: "/images/Mask group.png",
+      title: "Weaving Stories of the Soul",
+      subheading: "A safe space to heal, reflect, and rediscover your inner strength.",
+      description:
+        "Through evidence-based therapy, mindfulness practices, and compassionate guidance, we help you navigate emotional challenges and reconnect with your authentic self.",
+      buttonText: "Book a Consultation",
+    },
+    {
+      image: "/images/19726c9c-7c52-4a43-9af5-9c3187998d61 1.png",
+      title: "From Darkness to Clarity",
+      subheading: "Transform emotional pain into resilience and purpose.",
+      description:
+        "Whether you are navigating grief, trauma, burnout, or life transitions, our structured programs are designed to restore balance, confidence, and emotional well-being.",
+      buttonText: "Begin Your Journey",
+    },
+    {
+      image: "/images/ChatGPT Image Feb 17, 2026, 10_50_45 AM 1.png",
+      title: "Healing That Creates Real Change",
+      subheading: "Sustainable growth. Emotional freedom. A renewed sense of self.",
+      description:
+        "Our personalized wellness programs combine therapy, reflective practices, and guided support to help you build long-term emotional resilience and live with intention.",
+      buttonText: "Explore Programs",
+    },
   ];
 
   useEffect(() => {
@@ -27,7 +49,7 @@ export default function HeroSection() {
             activeSlide === index ? "opacity-70" : "opacity-0"
           }`}
           style={{
-            backgroundImage: `url('${slide}')`,
+            backgroundImage: `url('${slide.image}')`,
           }}
         ></div>
       ))}
@@ -36,18 +58,30 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 h-full flex items-center">
         <div className="max-w-7xl mx-auto px-6 w-full">
-          <div className="max-w-2xl">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
-              Restore Balance.
-              <br />
-              Reclaim Your Life.
-            </h1>
-            <p className="text-xl text-white/90 mb-8">
-              Find peace and healing through transformative wellness retreats
-            </p>
-            <button className="bg-primary hover:opacity-80 text-white px-8 py-3 rounded-full text-lg font-medium transition cursor-pointer">
-              Book Now
-            </button>
+          <div className="max-w-3xl">
+            {slides.map((slide, index) => (
+              <div
+                key={index}
+                className={`transition-opacity duration-1000 ${
+                  activeSlide === index ? "opacity-100" : "opacity-0 absolute"
+                }`}
+              >
+                <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
+                  {slide.title}
+                </h1>
+                <p className="text-2xl text-white/95 mb-4 font-medium">
+                  {slide.subheading}
+                </p>
+                <p className="text-lg text-white/90 mb-8 leading-relaxed">
+                  {slide.description}
+                </p>
+                <Link href="/">
+                  <button className="bg-primary hover:opacity-80 text-white px-8 py-3 rounded-full text-lg font-medium transition cursor-pointer">
+                    {slide.buttonText}
+                  </button>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </div>

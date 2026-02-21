@@ -6,26 +6,26 @@ export default function WhyUsSection() {
       icon: "/images/Group 13.png",
       title: "Personalized Care",
       description:
-        "Your privacy and comfort are our top priorities. We provide a judgment-free space where healing begins.",
+        "Your journey is unique — and your healing plan should be too. We tailor every session to your individual needs, challenges, and goals, ensuring focused guidance and intentional growth.",
     },
     {
       icon: "/images/Group 14.png",
       title: "Experienced Professionals",
       description:
-        "Your privacy and comfort are our top priorities. We provide a judgment-free space where healing begins.",
+        "Led by trained mental health experts, our approach blends clinical knowledge with empathy. You receive structured, evidence-based support grounded in real therapeutic experience.",
     },
     {
       icon: "/images/Group 16.png",
       title: "Holistic Approach",
       description:
-        "Your privacy and comfort are our top priorities. We provide a judgment-free space where healing begins.",
+        "We support emotional, mental, and behavioral well-being together — not in isolation. By integrating mindfulness, therapy, and reflective practices, we promote lasting balance and resilience.",
     },
   ];
 
   const benefits = [
     "Confidential Sessions",
-    "Flexible Consulting Modes",
-    "Continuous Support",
+    "Flexible Consulting Modes (Online & In-Person)",
+    "Ongoing Support & Guidance",
   ];
 
   return (
@@ -48,8 +48,8 @@ export default function WhyUsSection() {
             Best Choice
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            We combine compassion, expertise, and accessibility to asport your
-            mental well-being at every step.
+            Compassionate care. Professional expertise. Meaningful
+            transformation.
           </p>
         </div>
 
@@ -83,8 +83,9 @@ export default function WhyUsSection() {
               Safe. Supportive. Confidential.
             </h3>
             <p className="text-teal-100 mb-6">
-              Your privacy and comfort are our top priorities. We provide a
-              judgment-free space where healing begins.
+              Your privacy and emotional safety are our highest priorities. We
+              create a judgment-free environment where healing feels secure and
+              empowering.
             </p>
             <ul className="space-y-4">
               {benefits.map((benefit, index) => (
