@@ -9,11 +9,14 @@ export default function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const navItems = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/services/reclaim", label: "Services" },
-    { href: "/page", label: "Page" },
+  ];
+  const serviceItems = [
+    { href: "/services/reclaim", label: "Reclaim" },
+    { href: "/services/corporate", label: "Corporate" },
   ];
 
   useEffect(() => {
@@ -76,6 +79,30 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
+          <div
+            className="relative"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
+            <button
+              className={`hover:opacity-80 transition px-4 py-2 rounded-full ${isScrolled ? "text-gray-900" : "text-white"} ${pathname.startsWith("/services") ? "bg-secondary" : ""}`}
+            >
+              Services
+            </button>
+            {servicesOpen && (
+              <div className="absolute top-full left-0 pt-2 bg-white rounded-lg shadow-lg py-2 min-w-[150px]">
+                {serviceItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block px-4 py-2 text-gray-900 hover:bg-gray-100 transition"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         </nav>
 
         {/* Contact Button */}
@@ -103,6 +130,28 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
+            <div>
+              <button
+                onClick={() => setServicesOpen(!servicesOpen)}
+                className="text-white w-full text-left px-4 py-2 rounded-full"
+              >
+                Services
+              </button>
+              {servicesOpen && (
+                <div className="pl-4 space-y-1">
+                  {serviceItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="block text-white/90 hover:opacity-80 transition px-4 py-2"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}
