@@ -27,7 +27,7 @@ export default function ProgramDetails() {
 
       {/* Right: White card */}
       <div
-        className="bg-white/80 backdrop-blur-2xl rounded-[22px] py-6 sm:py-7 px-6 sm:px-9 mx-4 sm:mr-14 mt-6 md:mt-0 w-11/12 sm:min-w-[360px] sm:max-w-[440px] relative z-[2]"
+        className="bg-white/80 backdrop-blur-2xl rounded-[22px] py-6 sm:py-7 px-6 sm:px-9 sm:mr-14 mt-6 md:mt-0 w-11/12 sm:min-w-[360px] sm:max-w-[440px] relative z-[2]"
         style={{
           boxShadow: "0 4px 24px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04)",
         }}
