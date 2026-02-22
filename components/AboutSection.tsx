@@ -29,33 +29,26 @@ export default function AboutSection() {
           {/* Content */}
           <div className="">
             <p className="text-gray-600 text-sm font-medium mb-3">About Us</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-              Sameera Sachdev
+            <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-8">
+              From Awareness to Impact: The{" "}
+              <span className="text-primary">Win Over Mind</span> Journey
             </h2>
 
             <div className="space-y-4 text-gray-700 text-base leading-relaxed">
-              <p className="font-semibold">
-                From Darkness to Purpose: A Journey of Healing and Helping
+              <p>
+                Win Over Mind was born from a deep understanding of what it
+                means to feel disconnected, overwhelmed, and unsure of the way
+                forward. What began as a personal journey through struggle,
+                detachment, and eventual clarity evolved into a purpose-driven
+                mission: to help others reclaim emotional balance and inner
+                strength.
               </p>
               <p>
-                There was a time when I felt disconnected — searching for
-                clarity, direction, and meaning. Through my own journey of
-                reflection and healing, I discovered tools that transformed my
-                life.
-              </p>
-              <p>
-                Today, I support individuals navigating grief, trauma, burnout,
-                and major life transitions. My work is rooted in evidence-based
-                therapy, mindfulness practices, and a deep commitment to
-                sustainable emotional growth.
-              </p>
-              <p>
-                Healing is not about perfection — it is about awareness,
-                resilience, and reclaiming your strength.
-              </p>
-              <p>
-                If you're ready to begin that journey, I'm here to walk
-                alongside you.
+                Today, Win Over Mind supports individuals and organizations
+                navigating grief, trauma, stress, and major life transitions.
+                Our work is grounded in evidence-based psychological practices,
+                mindfulness, and a strong commitment to creating meaningful,
+                sustainable change — not quick fixes.
               </p>
             </div>
 
