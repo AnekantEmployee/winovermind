@@ -29,33 +29,11 @@ export default function WhatYourOrgSection() {
     <section
       className="relative min-h-[60vh] flex flex-col items-center justify-center overflow-hidden px-8 py-20 bg-[#53ACAA]"
       style={{
-        backgroundImage: "url('/images/services/corporate/why-focus-bg.png')",
+        backgroundImage: "url('/images/services/corporate/why-us.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      {/* Overlay */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(160deg, rgba(43,82,97,0.18) 0%, rgba(4,117,123,0.22) 100%)",
-        }}
-      />
-
-      {/* Bottom-right leaf decoration */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 right-0 w-64 h-64 opacity-20"
-        style={{
-          backgroundImage: "url('/images/services/corporate/leaf-deco.png')",
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "bottom right",
-        }}
-      />
-
       <div className="relative z-10 max-w-5xl mx-auto w-full flex flex-col gap-12">
         {/* Heading */}
         <h2 className="text-4xl md:text-5xl font-extrabold text-white text-center leading-tight tracking-tight">
