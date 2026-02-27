@@ -1,7 +1,16 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import emailjs from "emailjs-com";
+
+const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID;
+const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+const PUBLIC_KEY = process.env.NEXT_PUBLIC_PUBLIC_KEY;
 
 export default function Footer() {
+  const [popup, setPopup] = useState({ visible: false, message: "", type: "" });
   const services = [
     "Psychotherapy",
     "Mental Counseling",
@@ -27,8 +36,49 @@ export default function Footer() {
     { icon: "facebook", href: "#" },
   ];
 
+  const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get("email") as string;
+
+    if (!email) {
+      setPopup({ visible: true, message: "Please enter your email.", type: "error" });
+      return;
+    }
+
+    const templateParams = { email, message: "Newsletter subscription request" };
+
+    emailjs.send(SERVICE_ID!, TEMPLATE_ID!, templateParams, PUBLIC_KEY!).then(
+      () => {
+        setPopup({ visible: true, message: "Subscribed successfully!", type: "success" });
+        e.currentTarget.reset();
+      },
+      () => {
+        setPopup({ visible: true, message: "Failed to subscribe. Try again.", type: "error" });
+      }
+    );
+  };
+
   return (
     <footer className="bg-gradient-to-tr from-secondary to-primary text-white">
+      {/* Popup */}
+      {popup.visible && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 backdrop-blur-sm">
+          <div
+            className={`bg-white p-6 rounded-xl shadow-2xl max-w-sm w-full mx-4 ${
+              popup.type === "success" ? "border-l-4 border-green-500" : "border-l-4 border-red-500"
+            }`}
+          >
+            <p className="text-center text-lg text-gray-800">{popup.message}</p>
+            <button
+              onClick={() => setPopup({ ...popup, visible: false })}
+              className="mt-4 w-full py-2 bg-primary text-white rounded-lg hover:opacity-90 transition cursor-pointer"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
       <div className="max-w-7xl mx-auto px-6 py-12">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
@@ -151,10 +201,11 @@ export default function Footer() {
 
         {/* Newsletter Section */}
         <div className="flex justify-end">
-          <form className="max-w-sm w-full">
+          <form onSubmit={handleSubscribe} className="max-w-sm w-full">
             <div className="relative bg-white/20 backdrop-blur-sm rounded-full p-1.5">
               <input
                 type="email"
+                name="email"
                 placeholder="Your email"
                 required
                 className="w-full pr-28 pl-5 py-2 text-sm rounded-full bg-transparent text-white placeholder-white/70 focus:outline-none"

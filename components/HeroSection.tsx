@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import ContactForm from "./ContactForm";
 
 export default function HeroSection() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [showContactForm, setShowContactForm] = useState(false);
   const slides = [
     {
       image: "/images/Mask group.png",
@@ -75,11 +76,12 @@ export default function HeroSection() {
                 <p className="text-lg text-white/90 mb-8 leading-relaxed">
                   {slide.description}
                 </p>
-                <Link href="/">
-                  <button className="bg-primary hover:opacity-80 text-white px-8 py-3 rounded-full text-lg font-medium transition cursor-pointer">
-                    {slide.buttonText}
-                  </button>
-                </Link>
+                <button
+                  onClick={() => setShowContactForm(true)}
+                  className="bg-primary hover:opacity-80 text-white px-8 py-3 rounded-full text-lg font-medium transition cursor-pointer"
+                >
+                  {slide.buttonText}
+                </button>
               </div>
             ))}
           </div>
@@ -98,6 +100,9 @@ export default function HeroSection() {
           />
         ))}
       </div>
+
+      {/* Contact Form Modal */}
+      {showContactForm && <ContactForm onClose={() => setShowContactForm(false)} />}
     </section>
   );
 }

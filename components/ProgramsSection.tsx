@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import ContactForm from "./ContactForm";
 
 export default function ProgramsSection() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [showContactForm, setShowContactForm] = useState(false);
 
   const programs = [
     {
@@ -217,7 +219,10 @@ export default function ProgramsSection() {
 
                     {/* Button */}
                     <div className="flex justify-end mt-2">
-                      <button className="bg-teal-700 hover:bg-teal-800 text-white px-6 py-2 rounded-full font-medium transition flex items-center gap-2 text-sm">
+                      <button
+                        onClick={() => setShowContactForm(true)}
+                        className="bg-teal-700 hover:bg-teal-800 text-white px-6 py-2 rounded-full font-medium transition flex items-center gap-2 text-sm cursor-pointer"
+                      >
                         Inquire Now
                         <svg
                           className="w-4 h-4"
@@ -241,6 +246,9 @@ export default function ProgramsSection() {
           </div>
         </div>
       </div>
+
+      {/* Contact Form Modal */}
+      {showContactForm && <ContactForm onClose={() => setShowContactForm(false)} />}
     </section>
   );
 }

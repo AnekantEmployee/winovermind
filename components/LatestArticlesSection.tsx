@@ -2,10 +2,16 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import emailjs from "emailjs-com";
+
+const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID;
+const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+const PUBLIC_KEY = process.env.NEXT_PUBLIC_PUBLIC_KEY;
 
 export default function LatestArticlesSection() {
   const [activeSlide, setActiveSlide] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [popup, setPopup] = useState({ visible: false, message: "", type: "" });
 
   const articles = [
     {
@@ -56,8 +62,49 @@ export default function LatestArticlesSection() {
     return () => clearInterval(interval);
   }, []);
 
+  const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get("email") as string;
+
+    if (!email) {
+      setPopup({ visible: true, message: "Please enter your email.", type: "error" });
+      return;
+    }
+
+    const templateParams = { email, message: "Newsletter subscription request" };
+
+    emailjs.send(SERVICE_ID!, TEMPLATE_ID!, templateParams, PUBLIC_KEY!).then(
+      () => {
+        setPopup({ visible: true, message: "Subscribed successfully!", type: "success" });
+        e.currentTarget.reset();
+      },
+      () => {
+        setPopup({ visible: true, message: "Failed to subscribe. Try again.", type: "error" });
+      }
+    );
+  };
+
   return (
     <section className="relative overflow-hidden">
+      {/* Popup */}
+      {popup.visible && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 backdrop-blur-sm">
+          <div
+            className={`bg-white p-6 rounded-xl shadow-2xl max-w-sm w-full mx-4 ${
+              popup.type === "success" ? "border-l-4 border-green-500" : "border-l-4 border-red-500"
+            }`}
+          >
+            <p className="text-center text-lg text-gray-800">{popup.message}</p>
+            <button
+              onClick={() => setPopup({ ...popup, visible: false })}
+              className="mt-4 w-full py-2 bg-primary text-white rounded-lg hover:opacity-90 transition cursor-pointer"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
       {/* Newsletter + Articles combined section with teal background */}
       <div className="bg-gradient-to-tr from-secondary to-primary from-[30%] relative">
         {/* Decorative circular pattern */}
@@ -90,17 +137,18 @@ export default function LatestArticlesSection() {
             </p>
 
             {/* Newsletter Form */}
-            <form className="max-w-2xl mx-auto">
+            <form onSubmit={handleSubscribe} className="max-w-2xl mx-auto">
               <div className="relative bg-white/20 backdrop-blur-sm rounded-full p-1.5">
                 <input
                   type="email"
+                  name="email"
                   placeholder="Your email address"
                   required
                   className="w-full pr-32 pl-6 py-3 rounded-full bg-transparent text-white placeholder-white/70 focus:outline-none"
                 />
                 <button
                   type="submit"
-                  className="absolute right-1.5 top-1.5 px-6 py-3 bg-[#53ACAA] hover:bg-teal-400 text-white font-semibold rounded-full transition whitespace-nowrap"
+                  className="absolute right-1.5 top-1.5 px-6 py-3 bg-[#53ACAA] hover:bg-teal-400 text-white font-semibold rounded-full transition whitespace-nowrap cursor-pointer"
                 >
                   Subscribe Now
                 </button>
