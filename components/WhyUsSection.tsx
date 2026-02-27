@@ -6,7 +6,7 @@ export default function WhyUsSection() {
       icon: "/images/Group 13.png",
       title: "Personalized Care",
       description:
-        "Your journey is unique — and your healing plan should be too. We tailor every session to your individual needs, challenges, and goals, ensuring focused guidance and intentional growth.",
+        "Your journey is unique and your healing plan should be too. We tailor every session to your individual needs, challenges, and goals, ensuring focused guidance and intentional growth.",
     },
     {
       icon: "/images/Group 14.png",
@@ -18,14 +18,14 @@ export default function WhyUsSection() {
       icon: "/images/Group 16.png",
       title: "Holistic Approach",
       description:
-        "We support emotional, mental, and behavioral well-being together — not in isolation. By integrating mindfulness, therapy, and reflective practices, we promote lasting balance and resilience.",
+        "We support emotional, mental, and behavioral well-being together not in isolation. By integrating mindfulness, therapy, and reflective practices, we promote lasting balance and resilience.",
     },
   ];
 
   const benefits = [
     "Confidential Sessions",
-    "Flexible Consulting Modes (Online & In-Person)",
     "Ongoing Support & Guidance",
+    "Flexible Consulting Modes (Online & In-Person)",
   ];
 
   return (
@@ -43,7 +43,9 @@ export default function WhyUsSection() {
             WHY US
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Why Our Mental Health Consulting is the
+            Why Our{" "}
+            <span className="text-primary">Mental Health Consulting</span> is
+            the
             <br />
             Best Choice
           </h2>
@@ -54,7 +56,7 @@ export default function WhyUsSection() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 gap-8 items-start">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Left Column - Features */}
           <div className="space-y-6">
             {features.map((feature, index) => (
@@ -71,7 +73,7 @@ export default function WhyUsSection() {
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600">{feature.description}</p>
+                  <p className="text-gray-600 pr-4">{feature.description}</p>
                 </div>
               </div>
             ))}
@@ -83,9 +85,10 @@ export default function WhyUsSection() {
               Safe. Supportive. Confidential.
             </h3>
             <p className="text-teal-100 mb-6">
-              Your privacy and emotional safety are our highest priorities. We
-              create a judgment-free environment where healing feels secure and
-              empowering.
+              Your privacy and emotional safety are our highest priorities.
+              <br /> We create a judgment-free environment where healing feels
+              <br />
+              secure and empowering.
             </p>
             <ul className="space-y-4">
               {benefits.map((benefit, index) => (

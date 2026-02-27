@@ -153,7 +153,7 @@ export default function ProgramCalendarSection() {
             {Array.from({ length: firstDay }).map((_, index) => (
               <div
                 key={`empty-${index}`}
-                className="h-24 md:h-28 border border-gray-100 rounded-lg"
+                className="h-24 md:h-20 border border-gray-100 rounded-lg"
               ></div>
             ))}
 
@@ -165,7 +165,7 @@ export default function ProgramCalendarSection() {
               return (
                 <div
                   key={day}
-                  className="relative h-24 md:h-28 border border-gray-100 rounded-lg"
+                  className="relative h-24 md:h-20 border border-gray-100 rounded-lg"
                   onClick={() => event && setSelectedEvent(event)}
                 >
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -183,17 +183,15 @@ export default function ProgramCalendarSection() {
                             : "bg-teal-400"
                         }`}
                       />
-                      {/* Desktop: Show full event */}
+                      {/* Desktop: Show line only */}
                       <div className="hidden md:block absolute left-2 right-2 bottom-2">
                         <div
-                          className={`min-h-[1.8rem] rounded-sm flex items-center justify-center text-center text-xs text-white font-medium px-1 ${
+                          className={`h-1 rounded-full ${
                             event.type === "residential"
                               ? "bg-teal-600"
                               : "bg-teal-400"
                           }`}
-                        >
-                          {event.title}
-                        </div>
+                        />
                       </div>
                     </>
                   )}

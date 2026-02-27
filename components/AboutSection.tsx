@@ -6,7 +6,7 @@ export default function AboutSection() {
       <div className="hidden md:block absolute right-0 top-1/4 w-10 h-81 bg-primary/90 rounded-tl-[1rem] rounded-bl-[1rem]"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-[40%_60%] gap-16 items-center">
           {/* Image */}
           <div className="relative w-full md:w-9/12 mx-auto">
             {/* Back decorative frame */}
@@ -27,11 +27,11 @@ export default function AboutSection() {
           </div>
 
           {/* Content */}
-          <div className="">
+          <div className="pr-[6vw]">
             <p className="text-gray-600 text-sm font-medium mb-3">About Us</p>
             <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-8">
-              From Awareness to Impact: The{" "}
-              <span className="text-primary">Win Over Mind</span> Journey
+              From Awareness to Impact: <br />
+              The <span className="text-primary">Win Over Mind</span> Journey
             </h2>
 
             <div className="space-y-4 text-gray-700 text-base leading-relaxed">
@@ -48,11 +48,11 @@ export default function AboutSection() {
                 navigating grief, trauma, stress, and major life transitions.
                 Our work is grounded in evidence-based psychological practices,
                 mindfulness, and a strong commitment to creating meaningful,
-                sustainable change — not quick fixes.
+                sustainable change not quick fixes.
               </p>
             </div>
 
-            <button className="mt-8 bg-primary cursor-pointer hover:bg-teal-700 text-white px-8 py-3 rounded-full font-medium transition-colors duration-200">
+            <button className="mt-8 bg-primary cursor-pointer hover:bg-teal-700 text-white px-8 py-3 rounded-full font-medium transition-colors duration-200 shadow-md shadow-primary">
               See detail
             </button>
           </div>
