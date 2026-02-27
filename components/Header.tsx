@@ -104,7 +104,7 @@ export default function Header() {
         {/* Contact Button */}
         <button
           onClick={() => setShowContactForm(true)}
-          className="hidden md:block bg-primary text-white px-6 py-2.5 rounded-full hover:opacity-80 transition"
+          className="hidden md:block bg-primary text-white px-6 py-2.5 rounded-full hover:opacity-80 transition cursor-pointer"
         >
           Contact Us
         </button>
@@ -156,7 +156,7 @@ export default function Header() {
                 setIsOpen(false);
                 setShowContactForm(true);
               }}
-              className="bg-primary text-white px-4 py-2 rounded-full hover:opacity-80 transition text-center"
+              className="bg-primary text-white px-4 py-2 rounded-full hover:opacity-80 transition text-center cursor-pointer"
             >
               Contact Us
             </button>

@@ -75,7 +75,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
           <h2 className="text-3xl font-bold text-primary">Contact Us</h2>
           <button
             onClick={onClose}
-            className="text-primary hover:text-opacity-70 transition text-3xl font-light leading-none"
+            className="text-primary hover:text-opacity-70 transition text-3xl font-light leading-none cursor-pointer"
           >
             ×
           </button>
@@ -111,7 +111,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
           />
           <button
             type="submit"
-            className="w-full bg-primary text-white py-3 rounded-xl hover:opacity-90 transition font-medium shadow-lg"
+            className="w-full bg-primary text-white py-3 rounded-xl hover:opacity-90 transition font-medium shadow-lg cursor-pointer"
           >
             Submit
           </button>
