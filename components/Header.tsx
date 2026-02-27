@@ -29,7 +29,7 @@ export default function Header() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-sm" : ""}`}>
       <div className="max-w-8xl px-5 mx-auto flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center">
+        <Link href="/" className="flex items-center">
           <Image
             src="/images/blue-logo-removebg-preview 1.png"
             alt="Bliss Serenity"
@@ -38,7 +38,7 @@ export default function Header() {
             priority
             className="w-24 sm:w-32 md:w-[8vw]"
           />
-        </div>
+        </Link>
 
         {/* Mobile Menu Button */}
         <button
