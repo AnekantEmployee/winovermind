@@ -28,7 +28,9 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-sm" : ""}`}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all py-2 duration-300 ${isScrolled ? "bg-white shadow-sm" : ""}`}
+    >
       <div className="max-w-8xl px-5 mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center">
@@ -111,7 +113,9 @@ export default function Header() {
       </div>
 
       {/* Contact Form Modal */}
-      {showContactForm && <ContactForm onClose={() => setShowContactForm(false)} />}
+      {showContactForm && (
+        <ContactForm onClose={() => setShowContactForm(false)} />
+      )}
 
       {/* Mobile Menu */}
       {isOpen && (
