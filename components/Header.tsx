@@ -4,12 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
+import ContactForm from "./ContactForm";
 
 export default function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [showContactForm, setShowContactForm] = useState(false);
   const navItems = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
@@ -100,13 +102,16 @@ export default function Header() {
         </nav>
 
         {/* Contact Button */}
-        <Link
-          href="/contact"
+        <button
+          onClick={() => setShowContactForm(true)}
           className="hidden md:block bg-primary text-white px-6 py-2.5 rounded-full hover:opacity-80 transition"
         >
           Contact Us
-        </Link>
+        </button>
       </div>
+
+      {/* Contact Form Modal */}
+      {showContactForm && <ContactForm onClose={() => setShowContactForm(false)} />}
 
       {/* Mobile Menu */}
       {isOpen && (
@@ -146,13 +151,15 @@ export default function Header() {
                 </div>
               )}
             </div>
-            <Link
-              href="/contact"
-              onClick={() => setIsOpen(false)}
+            <button
+              onClick={() => {
+                setIsOpen(false);
+                setShowContactForm(true);
+              }}
               className="bg-primary text-white px-4 py-2 rounded-full hover:opacity-80 transition text-center"
             >
               Contact Us
-            </Link>
+            </button>
           </nav>
         </div>
       )}
