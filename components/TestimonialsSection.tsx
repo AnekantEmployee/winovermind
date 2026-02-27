@@ -59,21 +59,28 @@ export default function TestimonialsSection() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveSlide((prev) => {
-        const next = (prev + 1) % testimonials.length;
-        if (scrollRef.current) {
-          const cardWidth = 300;
-          const gap = 24;
-          scrollRef.current.scrollTo({
-            left: next * (cardWidth + gap),
-            behavior: "smooth",
-          });
+      if (scrollRef.current) {
+        const containerWidth = scrollRef.current.clientWidth;
+        const scrollAmount = containerWidth;
+        const maxScroll = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
+        const currentScroll = scrollRef.current.scrollLeft;
+        
+        if (currentScroll >= maxScroll - 10) {
+          scrollRef.current.scrollTo({ left: 0, behavior: "auto" });
+          setTimeout(() => {
+            if (scrollRef.current) {
+              scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+            }
+          }, 50);
+          setActiveSlide(1);
+        } else {
+          scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+          setActiveSlide((prev) => (prev + 1) % testimonials.length);
         }
-        return next;
-      });
+      }
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [testimonials.length]);
 
   return (
     <section
@@ -104,12 +111,12 @@ export default function TestimonialsSection() {
         {/* Testimonials Grid - Horizontal Scroll */}
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto pb-6 scrollbar-hide scroll-smooth"
+          className="flex gap-6 overflow-x-auto pb-6 scrollbar-hide scroll-smooth snap-x snap-mandatory"
         >
-          {[...testimonials, ...testimonials].map((testimonial, index) => (
+          {[...testimonials, ...testimonials, ...testimonials].map((testimonial, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-[300px] h-[350px] bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition flex flex-col"
+              className="flex-shrink-0 w-full md:w-[calc(33.333%-16px)] md:min-w-[280px] h-[300px] md:h-[350px] bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition flex flex-col snap-start"
             >
               {/* Header - Fixed Height */}
               <div className="flex items-start justify-between mb-4 h-10">
@@ -167,7 +174,7 @@ export default function TestimonialsSection() {
               </div>
 
               {/* Program Details - Fixed Height */}
-              <div className="grid grid-cols-3 gap-4 pt-2 border-t border-gray-100 h-20">
+              <div className="grid grid-cols-3 gap-4 pt-2 border-t border-gray-100 h-18">
                 <div>
                   <p className="text-[10px] text-teal-600 font-semibold mb-1 uppercase">
                     Program
