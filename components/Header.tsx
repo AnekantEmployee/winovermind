@@ -26,11 +26,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/10 backdrop-blur-md" : ""
-      }`}
-    >
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-sm" : ""}`}>
       <div className="max-w-8xl px-5 mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
@@ -47,20 +43,20 @@ export default function Header() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`md:hidden p-2 w-10 h-10 flex flex-col justify-center items-end gap-1.5 transition-colors ${isScrolled ? "text-gray-900" : "text-white"}`}
+          className="md:hidden p-2 w-10 h-10 flex flex-col justify-center items-end gap-1.5 text-primary"
         >
           <span
-            className={`h-0.5 transition-all duration-300 origin-right ${isScrolled ? "bg-gray-900" : "bg-white"} ${
+            className={`h-0.5 bg-primary transition-all duration-300 origin-right ${
               isOpen ? "w-full rotate-[-40deg] translate-y-[1px]" : "w-full"
             }`}
           />
           <span
-            className={`h-0.5 transition-all duration-300 ${isScrolled ? "bg-gray-900" : "bg-white"} ${
+            className={`h-0.5 bg-primary transition-all duration-300 ${
               isOpen ? "w-0 opacity-0" : "w-[80%]"
             }`}
           />
           <span
-            className={`h-0.5 transition-all duration-300 origin-right ${isScrolled ? "bg-gray-900" : "bg-white"} ${
+            className={`h-0.5 bg-primary transition-all duration-300 origin-right ${
               isOpen ? "w-full rotate-[40deg] translate-y-[-1px]" : "w-[65%]"
             }`}
           />
@@ -72,9 +68,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className={`hover:opacity-80 transition px-4 py-2 rounded-full ${
-                isScrolled ? "text-gray-900" : "text-white"
-              } ${pathname === item.href ? "bg-secondary" : ""}`}
+              className={`text-primary hover:opacity-80 transition px-4 py-2 rounded-full ${pathname === item.href ? "bg-primary text-white" : ""}`}
             >
               {item.label}
             </Link>
@@ -85,7 +79,7 @@ export default function Header() {
             onMouseLeave={() => setServicesOpen(false)}
           >
             <button
-              className={`hover:opacity-80 transition px-4 py-2 rounded-full ${isScrolled ? "text-gray-900" : "text-white"} ${pathname.startsWith("/services") ? "bg-secondary" : ""}`}
+              className={`text-primary hover:opacity-80 transition px-4 py-2 rounded-full ${pathname.startsWith("/services") ? "bg-primary text-white" : ""}`}
             >
               Services
             </button>
@@ -95,7 +89,7 @@ export default function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block px-4 py-2 text-gray-900 hover:bg-gray-100 transition"
+                    className="block px-4 py-2 text-primary hover:bg-gray-100 transition"
                   >
                     {item.label}
                   </Link>
@@ -116,15 +110,15 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-primary/95 backdrop-blur-sm">
+        <div className="md:hidden bg-white border-t">
           <nav className="flex flex-col space-y-2 px-6 py-4">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className={`text-white hover:opacity-80 transition px-4 py-2 rounded-full ${
-                  pathname === item.href ? "bg-primary" : ""
+                className={`text-primary hover:opacity-80 transition px-4 py-2 rounded-full ${
+                  pathname === item.href ? "bg-primary text-white" : ""
                 }`}
               >
                 {item.label}
@@ -133,7 +127,7 @@ export default function Header() {
             <div>
               <button
                 onClick={() => setServicesOpen(!servicesOpen)}
-                className="text-white w-full text-left px-4 py-2 rounded-full"
+                className="text-primary w-full text-left px-4 py-2 rounded-full"
               >
                 Services
               </button>
@@ -144,7 +138,7 @@ export default function Header() {
                       key={item.href}
                       href={item.href}
                       onClick={() => setIsOpen(false)}
-                      className="block text-white/90 hover:opacity-80 transition px-4 py-2"
+                      className="block text-primary hover:opacity-80 transition px-4 py-2"
                     >
                       {item.label}
                     </Link>
@@ -155,7 +149,7 @@ export default function Header() {
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}
-              className="bg-white text-primary px-4 py-2 rounded-full hover:opacity-80 transition text-center"
+              className="bg-primary text-white px-4 py-2 rounded-full hover:opacity-80 transition text-center"
             >
               Contact Us
             </Link>
