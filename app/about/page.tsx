@@ -1,11 +1,15 @@
-import Component from "@/components/About/HeroSection";
+import HeroSection from "@/components/About/HeroSection";
 import OurStory from "@/components/About/OurStory";
+import WhatWeDo from "@/components/About/WhatWeDo";
+import WhoWeWorkWith from "@/components/About/WhoWeWorkWith";
 
 export default function AboutPage() {
   return (
     <main className="w-full">
-      <Component />
+      <HeroSection />
       <OurStory />
+      <WhatWeDo />
+      <WhoWeWorkWith />
     </main>
   );
 }
