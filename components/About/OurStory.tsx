@@ -8,12 +8,12 @@ const OurStory = () => {
       style={{ background: "linear-gradient(to right, #53acaa 1%, #04757B 100%)" }}
     >
       {/* Heading */}
-      <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-14">
+      <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-4 md:mb-14">
         Our Story
       </h2>
 
       {/* Meditation illustration */}
-      <div className="absolute bottom-0 left-4 w-[15vw] aspect-auto">
+      <div className="hidden md:block absolute bottom-0 left-4 w-[15vw] aspect-auto">
         <Image
           src="/images/about/character-2.png"
           alt="Meditation character"
@@ -23,11 +23,11 @@ const OurStory = () => {
         />
       </div>
 
-      <div className="grid grid-cols-2 items-center gap-10 relative pb-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-5 md:gap-10 relative pb-20">
         {/* Images column */}
-        <div className="relative h-full flex flex-col gap-4 flex-shrink-0">
+        <div className="relative h-[200px] md:h-full flex flex-col gap-4 flex-shrink-0">
           {/* Stacked / overlapping photos */}
-          <div className="absolute left-10 w-[65%] rounded-md">
+          <div className="absolute left-0 md:left-10 w-[65%] rounded-md">
             <Image
               src="/images/about/IMG-20190920-WA0004 1.png"
               alt="Group meditation session"
@@ -36,7 +36,7 @@ const OurStory = () => {
               className="w-full h-auto"
             />
           </div>
-          <div className="absolute right-0 bottom-0 w-[60%] rounded-md overflow-hidden shadow-xl self-end">
+          <div className="absolute right-0 bottom-0 w-[60%] rounded-md overflow-hidden shadow-xl">
             <Image
               src="/images/about/Copy of 20230605_203118_236480e2-f096-4aa5-830b-16e18f6f929d 2.png"
               alt="Team gathering"
@@ -48,7 +48,7 @@ const OurStory = () => {
         </div>
 
         {/* Story text */}
-        <div className="flex-1 text-white space-y-5 text-base md:text-lg leading-relaxed">
+        <div className="flex-1 text-white space-y-2 md:space-y-5 text-base md:text-lg leading-relaxed">
           <p>
             Win Over Mind was born from a deep understanding of emotional
             struggle the kind that leaves people feeling disconnected from
